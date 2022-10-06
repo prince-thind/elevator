@@ -7,4 +7,41 @@ body {
   text-align: center;
   background-color: hsl(0, 0%, 9%);
   color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.heading{
+  background-color: hsl(39, 50%, 25%);
+  padding:0.5rem;
+  border-bottom: 2px solid black;
+}
+.main{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons{
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.button{
+  margin:1rem;
+  padding:1rem;
+  border-radius: 50%;
+  border:0.5rem ridge black;
+  background: radial-gradient(black,hsl(0, 0%, 15%),black);
+  cursor:pointer;
+}
+.button:hover{
+  transform: scale(1.1);
+}
+
+.active-button{
+  background: radial-gradient(black,hsl(0, 100%, 30%),black);
+}
+
+.lift{
+  background: radial-gradient(hsl(0, 0%, 15%),black);
+  border: 0.5rem ridge black;
+  padding:2rem 1rem;
 }
