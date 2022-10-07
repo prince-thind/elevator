@@ -13,12 +13,16 @@ function init() {
 
 function animate() {
 
-    if (state.waiting || state.floors.length == 0) return requestAnimationFrame(animate);
+    if (state.waiting) return requestAnimationFrame(animate);
+
+    if (state.floors.length == 0) {
+        state.direction = null;
+        return requestAnimationFrame(animate);
+    }
 
     const floor = getExactFloor(state.height);
     if (floor) {
         updateLiftWaitingStatus(floor)
-
     }
 
     UI.lift.style.marginTop = `${state.height}px`;
