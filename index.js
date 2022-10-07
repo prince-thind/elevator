@@ -12,11 +12,9 @@ function init() {
 }
 
 function animate() {
-
     if (state.waiting) return requestAnimationFrame(animate);
 
     if (state.floors.length == 0) {
-        state.direction = null;
         return requestAnimationFrame(animate);
     }
 
