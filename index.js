@@ -17,7 +17,7 @@ function animate() {
     updateDirection();
 
     const floor = getExactFloor(state.height);
-    if (floor!=null) {
+    if (floor != null) {
         updateLiftStatus(floor)
     }
 
@@ -29,7 +29,7 @@ function animate() {
 function moveLift() {
     UI.lift.style.marginTop = `${state.height}px`;
 
-   
+
     if (state.height <= 0) {
         state.direction = 'bottom'
     }
@@ -51,6 +51,6 @@ function moveLift() {
 
 function addFloorViaKey(e) {
     const pressed = +String.fromCharCode(e.keyCode);
-    if (![0,1, 2, 3, 4, 5, 6, 7, 8, 9].includes(pressed)) return;
+    if (![0, 1, 2, 3, 4, 5, 6, 7, 8, 9].includes(pressed)) return;
     addFloor(pressed)
 }
