@@ -1,6 +1,6 @@
 import state from "./lib/state.js";
 import UI, { setupUIButtons } from "./lib/UI.js";
-import { getExactFloor, updateLiftWaitingStatus } from "./lib/utility.js";
+import { getExactFloor, updateLiftStatus } from "./lib/utility.js";
 
 
 init();
@@ -12,17 +12,19 @@ function init() {
 }
 
 function animate() {
-    if (state.waiting) return requestAnimationFrame(animate);
-
-    if (state.floors.length == 0) {
-        return requestAnimationFrame(animate);
-    }
-
+    if (state.waiting || state.floors.length == 0) return requestAnimationFrame(animate);
+   
     const floor = getExactFloor(state.height);
     if (floor) {
-        updateLiftWaitingStatus(floor)
+        updateLiftStatus(floor)
     }
 
+    moveLift();
+    requestAnimationFrame(animate);
+
+}
+
+function moveLift() {
     UI.lift.style.marginTop = `${state.height}px`;
 
     if (state.height <= 0) {
@@ -40,10 +42,6 @@ function animate() {
     if (state.direction == 'top') {
         state.height -= state.speed;
     }
-
-    requestAnimationFrame(animate);
-
 }
-
 
 
