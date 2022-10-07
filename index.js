@@ -1,14 +1,18 @@
 import state from "./lib/state.js";
 import UI from "./lib/UI.js";
-import { updateLiftWaitingStatus } from "./lib/utility.js";
+import { getExactFloor, updateLiftWaitingStatus } from "./lib/utility.js";
 
 
 function animate() {
 
+    if (state.waiting) return requestAnimationFrame(animate);
 
-    if (state.waiting) return requestAnimationFrame(animate)
+    const floor=getExactFloor(state.height);
+    if(floor){
+        updateLiftWaitingStatus(floor)
+    }
 
-    UI.lift.style.marginTop = `${state.height}rem`;
+    UI.lift.style.marginTop = `${state.height}px`;
 
     if (state.height <= 0) {
         state.direction = 'bottom'
