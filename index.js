@@ -1,6 +1,6 @@
 import state from "./lib/state.js";
 import UI, { setupUIButtons } from "./lib/UI.js";
-import { getExactFloor, updateLiftStatus } from "./lib/utility.js";
+import { getExactFloor, updateDirection, updateLiftStatus } from "./lib/utility.js";
 
 
 init();
@@ -8,12 +8,13 @@ init();
 function init() {
     setupUIButtons();
     requestAnimationFrame(animate);
-
 }
 
 function animate() {
     if (state.waiting || state.floors.length == 0) return requestAnimationFrame(animate);
    
+    updateDirection();
+
     const floor = getExactFloor(state.height);
     if (floor) {
         updateLiftStatus(floor)
