@@ -32,7 +32,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 0.5rem ridge black;
+  border: 0.5rem ridge gray;
   background: radial-gradient(black, hsl(0, 0%, 15%), black);
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ body {
 
 .lift {
   background: radial-gradient(hsl(0, 0%, 15%), black);
-  border: 0.5rem ridge black;
+  border: 0.5rem ridge gray;
   padding: 1rem 0.5rem;
 }
 
