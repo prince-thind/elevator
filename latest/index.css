@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  background-color: hsl(0, 0%, 9%);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.heading {
+  background-color: hsl(39, 50%, 25%);
+  padding: 0.5rem;
+  border-bottom: 2px solid black;
+}
+.main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.button {
+  margin: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.5rem ridge gray;
+  background: radial-gradient(black, hsl(0, 0%, 15%), black);
+  cursor: pointer;
+}
+.button:hover {
+  transform: scale(1.1);
+}
+.button:active {
+  transform: scale(1);
+  background: radial-gradient(black, hsl(0, 100%, 30%), black);
+}
+
+.active-button {
+  background: radial-gradient(black, hsl(0, 100%, 30%), black);
+}
+
+.lift-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.scale {
+  list-style-type: none;
+}
+.scale-item {
+  height: 3rem;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lift {
+  background: radial-gradient(hsl(0, 0%, 15%), black);
+  border: 0.5rem ridge gray;
+  padding: 1rem 0.5rem;
+}
+
+.active-lift {
+  background: radial-gradient(hsl(240, 100%, 30%), black);
+}
